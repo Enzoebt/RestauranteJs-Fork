@@ -48,7 +48,7 @@ function RestauranteForm({ atualizarLista }) {
                 }
             }
         } catch (error) {
-            setMensagem('Erro ao conectar ao servidor.');
+            setMensagem('Erro ao conectar ao servidor!!!');
         }
     };
 
@@ -108,7 +108,7 @@ function RestauranteForm({ atualizarLista }) {
                     className="p-button-rounded p-button-lg" />
 
                 {mensagem && (
-                    <Message severity="success" text={mensagem} style={{ marginTop: '20px' }} />
+                    <Message severity="success" text={"Cadastrado com sucesso!!"} style={{ marginTop: '20px' }} />
                 )}
 
                 {fieldErrors.global && (
