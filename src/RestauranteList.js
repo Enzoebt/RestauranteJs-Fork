@@ -59,6 +59,7 @@ import RestauranteForm from "./RestauranteForm";
                                 <Column field="endereco" header="Endereço" style={{ width: '25%' }}></Column>
                                 <Column field="telefone" header="Telefone" style={{ width: '25%' }}></Column>
                                 <Column field="email" header="E-mail" style={{ width: '25%' }}></Column>
+                        
                             </DataTable>)} 
                         </>
                     )}   
