@@ -11,12 +11,13 @@ function RestauranteForm({ atualizarLista }) {
     const [endereco, setEndereco] = useState('');
     const [telefone, setTelefone] = useState('');
     const [email, setEmail] = useState('');
+    const [proprietarioRestaurante, setProprietarioRestaurante] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [fieldErrors, setFieldErrors] = useState({});
 
     const salvarRestaurante = async (e) => {
         e.preventDefault();
-        const restaurante = { nomeRestaurante, cnpj, endereco, telefone, email };
+        const restaurante = { nomeRestaurante, cnpj, endereco, telefone, email, proprietarioRestaurante };
 
         try {
             const response = await fetch('http://localhost:8080/restaurante', {
@@ -32,6 +33,7 @@ function RestauranteForm({ atualizarLista }) {
                 setEndereco('');
                 setTelefone('');
                 setEmail('');
+                setProprietarioRestaurante('');
                 atualizarLista();
                 setFieldErrors({});
             } else {
@@ -100,6 +102,15 @@ function RestauranteForm({ atualizarLista }) {
                         placeholder="Digite o e-mail do restaurante"
                         required />
                     {fieldErrors.email && <Message severity="error" text={fieldErrors.email} />}
+                </div>
+
+                <div className="p-field" style={{ marginBottom: '20px' }}>
+                    <label htmlFor="proprietarioRestaurante" style={{ fontWeight: 'bold' }}>Nome do Proprietario</label>
+                    <InputText id="proprietarioRestaurante" value={proprietarioRestaurante}
+                        onChange={(e) => setProprietarioRestaurante(e.target.value)}
+                        placeholder="Digite o nome do proprietario"
+                        required />
+                    {fieldErrors.proprietarioRestaurante && <Message severity="error" text={fieldErrors.proprietarioRestaurante} />}
                 </div>
 
                 <Divider />
