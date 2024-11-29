@@ -42,7 +42,7 @@ import RestauranteForm from "./RestauranteForm";
             return (
                 <div>
                     <Panel header={ isAdding ? "Restaurantes Cadastrados" : "Restaurante Cadastrados"}> 
-                        <div style={{marginBottom: '20px', textAlign:'left'}}>
+                            <div style={{marginBottom: '20px', textAlign:'left'}}>
                             <Button label={ isAdding ? "Ver lista de Restaurante" : "Cadastrar Novo Restaurante"}    
                                 icon={ isAdding? "pi pi-arrow-left" : "pi pi-plus"}
                                 onClick={() => setIsAdding(!isAdding)} />
